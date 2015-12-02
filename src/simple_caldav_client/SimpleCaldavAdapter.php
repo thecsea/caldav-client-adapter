@@ -85,12 +85,15 @@ class SimpleCaldavAdapter implements CaldavInterface
     public function getEvents($start = null, $end = null)
     {
         try{
-            $event = $this->simpleCaldavClient->getEvents($start, $end);
+            $events = $this->simpleCaldavClient->getEvents($start, $end);
         }catch (\it\thecsea\simple_caldav_client\CalDAVException $e){
             throw new CaldavException($e->getMessage(), 0, $e);
         }
 
-        return new Event($event);
+        $newEvents = [];
+        foreach($events as $key=>$event)
+            $newEvents[$key] = new Event($event);
+        return $newEvents;
     }
 
 
