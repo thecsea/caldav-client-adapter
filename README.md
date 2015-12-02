@@ -9,7 +9,7 @@ Caldav adapter that uses other thecsea libraries
 
 # Caldav implemented
 - [x] [thecsea simple caldav client](https://github.com/thecsea/simpleCalDAV)
-- [] [thecsea caldav client](https://github.com/thecsea/caldav-client)
+- [ ] [thecsea caldav client](https://github.com/thecsea/caldav-client)
 
 # Functions implemented
 * connect
