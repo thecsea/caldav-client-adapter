@@ -1,5 +1,5 @@
 {
-  "name": "thecsea/caldav-client",
+  "name": "thecsea/caldav-client-adapter",
   "type": "library",
   "keywords": ["caldav","client", "simple", "adapter"],
   "description": "Caldav adapter that uses other thecsea libraries",
