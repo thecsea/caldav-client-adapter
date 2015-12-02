@@ -65,8 +65,8 @@ class SimpleCaldavAdapter implements CaldavInterface
         }
 
         $newCalendars = [];
-        foreach($calendars as $calendar)
-            $newCalendars[] = new Calendar($calendar);
+        foreach($calendars as $key=>$calendar)
+            $newCalendars[$key] = new Calendar($calendar);
         return $newCalendars;
     }
 
