@@ -20,7 +20,7 @@
 namespace it\thecsea\caldav_client_adapter\simple_caldav_client;
 
 use it\thecsea\caldav_client_adapter\CalendarInterface;
-use it\thecsea\simple_caldav_client\CalDAVObject;
+use it\thecsea\simple_caldav_client\CalDAVCalendar;
 
 /**
  * Class Calendar
@@ -33,21 +33,21 @@ class Calendar implements CalendarInterface
 {
 
     /**
-     * @var CalDAVObject
+     * @var CalDAVCalendar
      */
     private $calendar;
 
     /**
      * Calendar constructor.
-     * @param CalDAVObject $calendar
+     * @param CalDAVCalendar $calendar
      */
-    public function __construct(CalDAVObject $calendar)
+    public function __construct(CalDAVCalendar $calendar)
     {
         $this->calendar = $calendar;
     }
 
     /**
-     * @return CalDAVObject
+     * @return CalDAVCalendar
      */
     public function getCalendar()
     {
