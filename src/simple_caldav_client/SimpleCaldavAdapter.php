@@ -50,7 +50,7 @@ class SimpleCaldavAdapter implements CaldavInterface
     public function connect($url, $user, $pass)
     {
         try{
-            $this->simpleCaldavClient->connect($url, $url, $pass);
+            $this->simpleCaldavClient->connect($url, $user, $pass);
         }catch (\it\thecsea\simple_caldav_client\CalDAVException $e){
             throw new CaldavException($e->getMessage(), 0, $e);
         }
