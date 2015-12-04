@@ -51,7 +51,7 @@ class SimpleCaldavAdapter implements CaldavInterface
     {
         try{
             $this->simpleCaldavClient->connect($url, $user, $pass);
-        }catch (\it\thecsea\simple_caldav_client\CalDAVException $e){
+        }catch (\Exception $e){
             throw new CaldavException($e->getMessage(), 0, $e);
         }
     }
@@ -60,7 +60,7 @@ class SimpleCaldavAdapter implements CaldavInterface
     {
         try{
             $calendars = $this->simpleCaldavClient->findCalendars();
-        }catch (\it\thecsea\simple_caldav_client\CalDAVException $e){
+        }catch (\Exception $e){
             throw new CaldavException($e->getMessage(), 0, $e);
         }
 
@@ -77,7 +77,7 @@ class SimpleCaldavAdapter implements CaldavInterface
 
         try{
             $this->simpleCaldavClient->setCalendar($calendar->getCalendar());
-        }catch (\it\thecsea\simple_caldav_client\CalDAVException $e){
+        }catch (\Exception $e){
             throw new CaldavException($e->getMessage(), 0, $e);
         }
     }
@@ -86,7 +86,7 @@ class SimpleCaldavAdapter implements CaldavInterface
     {
         try{
             $events = $this->simpleCaldavClient->getEvents($start, $end);
-        }catch (\it\thecsea\simple_caldav_client\CalDAVException $e){
+        }catch (\Exception $e){
             throw new CaldavException($e->getMessage(), 0, $e);
         }
 
@@ -95,6 +95,4 @@ class SimpleCaldavAdapter implements CaldavInterface
             $newEvents[$key] = new Event($event);
         return $newEvents;
     }
-
-
 }
