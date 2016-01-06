@@ -47,6 +47,12 @@ class SimpleCaldavAdapter implements CaldavInterface
         $this->simpleCaldavClient = new SimpleCalDAVClient();
     }
 
+    /**
+     * @param string $url
+     * @param string $user
+     * @param string $pass
+     * @throws CaldavException
+     */
     public function connect($url, $user, $pass)
     {
         try{
@@ -56,6 +62,10 @@ class SimpleCaldavAdapter implements CaldavInterface
         }
     }
 
+    /**
+     * @return array
+     * @throws CaldavException
+     */
     public function findCalendars()
     {
         try{
@@ -70,6 +80,10 @@ class SimpleCaldavAdapter implements CaldavInterface
         return $newCalendars;
     }
 
+    /**
+     * @param CalendarInterface $calendar
+     * @throws CaldavException
+     */
     public function setCalendar(CalendarInterface $calendar)
     {
         if(!($calendar->getCalendar() instanceof CalDAVCalendar))
@@ -82,6 +96,12 @@ class SimpleCaldavAdapter implements CaldavInterface
         }
     }
 
+    /**
+     * @param null $start
+     * @param null $end
+     * @return array
+     * @throws CaldavException
+     */
     public function getEvents($start = null, $end = null)
     {
         try{
